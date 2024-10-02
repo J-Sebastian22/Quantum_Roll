@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from django.shortcuts import get_object_or_404
+from rest_framework.decorators import authentication_classes, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication 
 
 from django.contrib.auth.models import User
 
@@ -41,33 +44,61 @@ def register(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def profile(request):
-    return Response({})
+    
+    print(request.user.id)
+    serializer = UserSerializer(instance= request.user)
+     
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 class MesaViewSet(viewsets.ModelViewSet):
     queryset = Mesa.objects.all()
     serializer_class = MesaSerializer
 
+
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 class MesaHasUsuarioViewSet(viewsets.ModelViewSet):
     queryset = MesaHasUsuario.objects.all()
     serializer_class = MesaHasUsuarioSerializer
 
+
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 class PersonajeViewSet(viewsets.ModelViewSet):
     queryset = Personaje.objects.all()
     serializer_class = PersonajeSerializer
 
+
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 class PjConocidoViewSet(viewsets.ModelViewSet):
     queryset = PjConocido.objects.all()
     serializer_class = PjConocidoSerializer
 
+
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 class AtributoViewSet(viewsets.ModelViewSet):
     queryset = Atributo.objects.all()
     serializer_class = AtributoSerializer
 
+
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 class EquipamientoViewSet(viewsets.ModelViewSet):
     queryset = Equipamiento.objects.all()
     serializer_class = EquipamientoSerializer
 
+
+# @authentication_classes([TokenAuthentication])
+# @permission_classes([IsAuthenticated])
 class HabilidadViewSet(viewsets.ModelViewSet):
     queryset = Habilidad.objects.all()
     serializer_class = HabilidadSerializer

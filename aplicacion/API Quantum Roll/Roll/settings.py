@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-fv#az9=$&xs-55f7c1n8)k1xso8v8=9i*g4l=amhze-hzrrz!a
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'eaae-152-200-174-234.ngrok-free.app',
-    '127.0.0.1'
+    'e9a3-152-200-174-234.ngrok-free.app',
+    '127.0.0.1',
+    'localhost'
 ]
 
 
@@ -88,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'roll2',
         'USER': 'root',
-        'PASSWORD': '0000',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '3306'
     }
@@ -136,6 +137,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8100",
-]
+CORS_ALLOW_ALL_ORIGINS= True
+
