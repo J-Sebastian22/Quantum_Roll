@@ -1,0 +1,62 @@
+.login-page {
+    --background: url('/assets/images/fondo-app.jpg') no-repeat center center/cover;
+
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .login-title {
+            font-family: 'MedievalSharp', serif;
+            font-size: 1.5em;
+            color: #ffffff;
+            text-shadow: 2px 2px 16px rgb(0, 0, 0);
+            margin-bottom: 30px;
+        }
+
+        .input-item {
+            --background: rgba(255, 255, 255, 0.507);
+            --color: #ffffff;
+            --placeholder-color: rgba(255, 255, 255, 0.6);
+            --highlight-color-focused: #f4d03f;
+            margin-bottom: 20px;
+        }
+
+        .login-button {
+            margin-top: 40px;
+            border-radius: 15px;
+            font-family: 'MedievalSharp', serif;
+            color: #f4d03f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transition: background-color 0.3s ease;
+      
+            &:hover {
+              background-color: #8a634f;
+            }
+      
+            ion-icon {
+              margin-right: 0px;
+            }
+        }
+    }
+
+    .register-redirect{
+        color: #ffffff;
+        margin-top: 50px;
+        text-shadow: 6px 6px 16px rgb(0, 0, 0);
+      }
+
+      span {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+}

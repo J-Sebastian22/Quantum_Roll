@@ -1,0 +1,43 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button color="dark" (click)="goToGame_Master()"> Atras </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+
+<ion-content class="game-master-page">
+  <div class="game-master-container">
+
+    <h1 class="title">Gestionar Mesa</h1>
+    <hr>
+
+    <div class="todo">
+      <div class="mesas-container">
+        <ion-item class="mesa-item">
+          <ion-input value="Reminiscencias" label="Nombre" label-placement="floating" placeholder="Ingrese el nombre"></ion-input>
+        </ion-item>
+
+        <ion-item class="mesa-item">
+          <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" label="Tematica" label-placement="floating" placeholder="Seleccionar">
+            <ion-select-option value="medieval">Medieval</ion-select-option>
+            <ion-select-option value="futurista">Futurista</ion-select-option>
+            <ion-select-option value="moderno">Moderno</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div class="personajes-container">
+        <h2 class="title-personajes">Personajes</h2>
+        <ion-item (click)="goToModify_pj()" class="personaje-item">
+          Sigma
+        </ion-item>
+        <ion-item class="personaje-item">
+          id: 21245
+        </ion-item>
+        <ion-item class="personaje-item">
+          id: 36474
+        </ion-item>
+        <a class="add-personaje">+</a>
+      </div>
+    </div>
+  </div>
+</ion-content>

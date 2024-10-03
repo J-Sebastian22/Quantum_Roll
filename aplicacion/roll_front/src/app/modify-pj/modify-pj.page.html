@@ -1,0 +1,243 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button color="dark" (click)="goToManage_Mesa()"> Cancelar </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button color="dark" (click)="goToManage_Mesa()"> Confirmar </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="game-master-page">
+  <ion-tabs>
+    <ion-tab tab="stats">
+      <div class="game-master-container">
+    
+        <h1 class="title">Modificar Personaje</h1>
+        <hr>
+          <div class="todo">
+            <div class="personajes-container">
+              <h2 class="title-personajes">Sigma</h2>
+              <ion-list lines="inset">
+                <ion-list-header>
+                  Estadisticas
+                </ion-list-header>
+
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+                <ion-item>
+                  <ion-label>Pokémon Yellow</ion-label>
+                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
+
+                </ion-item>
+              </ion-list>
+            </div>
+          </div>
+      </div>
+    </ion-tab>
+
+    <ion-tab tab="skills">
+      <div class="game-master-container">
+        <h1 class="title">Modificar Personaje</h1>
+        <hr>
+          <div class="todo">
+            <div class="personajes-container">
+              <h2 class="title-personajes">Sigma</h2>
+              <ion-list>
+                <ion-list-header>
+                  Habilidades
+                </ion-list-header>
+                <ion-label>Premonicion de combate</ion-label><ion-range [ticks]="true" [snaps]="true" min="0" max="10" pin="true" color="secondary"></ion-range>
+                <ion-label>Canto magico</ion-label><ion-range [ticks]="true" [snaps]="true" min="0" max="10" [pin]="true" color="secondary"></ion-range>
+                <ion-fab-button color="dark" >
+                  <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+              </ion-list>          
+            </div>
+          </div>
+      </div>
+    </ion-tab>
+
+    <ion-tab tab="bag">
+      <div class="game-master-container">
+        <h1 class="title">Modificar Personaje</h1>
+        <hr>
+          <div class="todo">
+            <div class="personajes-container">
+              <h2 class="title-personajes">Sigma</h2>
+              <ion-list lines="none">
+                <ion-list-header>
+                  Inventario
+                </ion-list-header>
+              <div class="inventory-container">
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/wooden_sword.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/wooden_sword.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/wooden_sword.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/wooden_sword.png'></ion-img>
+                </ion-item>
+              </div>
+              <ion-fab-button color="dark" >
+                <ion-icon name="add"></ion-icon>
+              </ion-fab-button>
+              </ion-list> 
+            </div>
+          </div>
+      </div>
+    </ion-tab>
+
+    <ion-tab tab="pjkn">
+      <div class="game-master-container">
+        <h1 class="title">Modificar Personaje</h1>
+        <hr>
+          <div class="todo">
+            <div class="personajes-container">
+              <h2 class="title-personajes">Sigma</h2>
+              <ion-list lines="none">
+                <ion-list-header>
+                  Personajes conocidos
+                </ion-list-header>
+              <div class="inventory-container">
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/npc1.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/npc1.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/npc1.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/npc1.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item">
+                  <ion-img
+                  src='/assets/images/npc1.png'></ion-img>
+                </ion-item>
+
+                <ion-fab-button color="dark" >
+                  <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+
+              </div>
+              </ion-list> 
+            </div>
+          </div>
+      </div>
+    </ion-tab>
+
+    <ion-tab-bar slot="bottom" color="dark">
+      <ion-tab-button tab="stats">
+        <ion-icon name="body"></ion-icon>
+        Estadisticas
+      </ion-tab-button>
+      <ion-tab-button tab="skills">
+        <ion-icon name="options"></ion-icon>
+        Habilidades
+      </ion-tab-button>
+      <ion-tab-button tab="bag">
+        <ion-icon name="logo-dropbox"></ion-icon>
+        Inventario
+      </ion-tab-button>
+      <ion-tab-button tab="pjkn">
+        <ion-icon name="people"></ion-icon>
+        Conocidos
+      </ion-tab-button>
+    </ion-tab-bar> 
+  </ion-tabs>
+</ion-content>

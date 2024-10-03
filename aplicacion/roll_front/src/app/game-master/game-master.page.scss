@@ -1,0 +1,80 @@
+.game-master-page {
+    --background: url('/assets/images/3.jpg') no-repeat center center/cover;
+
+    .game-master-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        a{
+            right: 0;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 20px;
+            text-decoration: none;
+        }
+        
+        hr {
+            width: 250px;
+            height: 0px;
+            border: 1px solid #dfd5a6;
+            margin-bottom: 30px;
+        }
+
+        .mesas-container {
+            width: 300px;
+            height: 500px;
+            background: #4d4d4d9a;
+            padding: 25px 20px 0px 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .mesas-title {
+            font-family: garamond;
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #dfd5a6;
+            text-shadow: 2px 2px 16px rgb(0, 0, 0);
+            margin-bottom: -5px;
+        }
+
+        .mesa-item {
+            font-family: 'Chau Philomene One';
+            --background: #babababe;
+            --color: #322e20;
+            --placeholder-color: rgba(255, 255, 255, 0.6);
+            --highlight-color-focused: #f4d03f;
+            margin-bottom: 15px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        .add-mesa {
+            display: flex;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            background: #e4e1e1;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: #000000;
+            font-size:xx-large;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+
+        }
+      
+        ion-icon {
+            margin-right: 0px;
+        }
+    }
+}

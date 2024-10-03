@@ -1,0 +1,76 @@
+.register-page {
+    --background: url('/assets/images/fondo-app.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+  
+    .register-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+  
+      .logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+        margin-top: 40px;
+      }
+  
+      .register-title {
+        font-family: 'MedievalSharp', serif;  /* Fuente con estilo medieval */
+        font-size: 1.5em;
+        color: #ffffff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        margin-bottom: 30px;
+      }
+  
+      .input-item {
+        --background: rgba(255, 255, 255, 0.2);
+        --color: #ffffff;
+        --placeholder-color: rgba(255, 255, 255, 0.6);
+        --highlight-color-focused: #f4d03f;
+        margin-top: 20px;
+        height: 60px;
+      }
+
+      .error-message{
+        font-size: 10px;
+        color:red;
+      }
+  
+      .register-button {    
+        margin-top: 20px;
+        border-radius: 15px;
+        font-family: 'MedievalSharp', serif;
+        color: #f4d03f;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #8a634f;
+        }
+  
+        ion-icon {
+          margin-right: 8px;
+        }
+      }
+  
+      .login-redirect {
+        color: #ffffff;
+        margin-top: 15px;
+        margin-bottom: 40px;
+        text-shadow: 6px 6px 16px rgb(0, 0, 0);
+  
+        span {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  

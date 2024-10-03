@@ -1,0 +1,53 @@
+<ion-content class="register-page">
+  <div class="register-container">
+  
+    <img src="assets/images/logo-rpg.png" class="logo" alt="Logo del Juego">
+
+    <h1 class="register-title">Registro en la Taberna</h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <ion-item class="input-item">
+        <ion-icon name="person-circle-outline" color="dark"></ion-icon>
+        <ion-input formControlName="username" label="Usuario" label-placement="floating" color="dark" placeholder="StarPlayer23" type="text"></ion-input>
+      </ion-item>
+      <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="error-message">
+        El nombre de usuario debe tener al menos 3 caracteres.
+      </div>
+
+      <ion-item class="input-item">
+        <ion-icon name="mail-outline" color="dark"></ion-icon>
+        <ion-input formControlName="email" label="Correo" label-placement="floating" color="dark" placeholder="example@gmail.com" type="email"></ion-input>
+      </ion-item>
+      <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="error-message">
+        Debes ingresar un correo electrónico válido.
+      </div>
+
+      <ion-item class="input-item">
+        <ion-icon name="key-outline" color="dark"></ion-icon>
+        <ion-input formControlName="password" label="Contraseña" label-placement="floating" color="dark" placeholder="**********" type="password">
+          <ion-input-password-toggle color="dark" slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+      <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="error-message">
+        La contraseña debe tener al menos 6 caracteres.
+      </div>
+
+      <ion-item class="input-item">
+        <ion-icon name="shield-checkmark-outline" color="dark"></ion-icon>
+        <ion-input formControlName="confirmPassword" label="Confirmar contraseña" label-placement="floating" color="dark" placeholder="**********" type="password">
+          <ion-input-password-toggle color="dark" slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+      <div *ngIf="registerForm.errors?.['notEquivalent'].invalid && registerForm.controls['confirmPassword'].touched" class="error-message">
+        Las contraseñas no coinciden.
+      </div>
+
+      <ion-button color="dark" expand="block" type="submit" [disabled]="registerForm.invalid" class="register-button">
+        <ion-icon name="person-add-outline"></ion-icon>
+        Unirse a la aventura
+      </ion-button>
+    </form>
+
+    <p class="login-redirect">¿Ya tienes una cuenta? <span (click)="goToLogin()">Inicia sesión aquí</span></p>
+  </div>
+</ion-content>
