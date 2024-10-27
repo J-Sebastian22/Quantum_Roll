@@ -5,17 +5,14 @@
     <hr>
 
     <div class="mesas-container">
-      <ion-item (click)="goToManage_Mesa()" class="mesa-item">
-        Reminiscencias <p>7</p>
-      </ion-item>
-      <ion-item class="mesa-item">
-        WWWWWWWWWWWW <p>3</p>
-      </ion-item>
-      <ion-item class="mesa-item">
-        mesa 3 <p>2</p>
+      <ion-item *ngFor="let mesa of mesas" (click)="goToManage_Mesa(mesa.id)" class="mesa-item">
+        {{ mesa.nombre }}
+        <p>{{ mesa.participantes || 0 }}</p> <!-- Muestra el número de participantes si existe, o 0 -->
       </ion-item>
 
-      <a class="add-mesa" (click)="goToNew_Mesa()">+</a>
+      <ion-fab-button color="dark" (click)="goToNew_Mesa()" class="add-mesa">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
 
     </div>
   </div>

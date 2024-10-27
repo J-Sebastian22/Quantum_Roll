@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-manage-mesa',
@@ -7,6 +8,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./manage-mesa.page.scss'],
 })
 export class ManageMesaPage implements OnInit {
+  mesaId!: number;
 
   customActionSheetOptions = {
     header: 'Tematica',
@@ -15,9 +17,11 @@ export class ManageMesaPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
+    this.mesaId = Number(this.route.snapshot.paramMap.get('id'));
   }
 
   goToModify_pj() {
