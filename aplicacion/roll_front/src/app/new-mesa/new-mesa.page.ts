@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { MesaService } from '../services/mesa.service';
 
 @Component({
   selector: 'app-new-mesa',
@@ -8,6 +9,9 @@ import { NavController } from '@ionic/angular';
 })
 export class NewMesaPage implements OnInit {
 
+  mesaNombre: string = '';
+  mesaTema: string = '';
+  mesaDescripcion: string = '';
 
   customActionSheetOptions = {
     header: 'Tematica',
@@ -15,13 +19,37 @@ export class NewMesaPage implements OnInit {
   };
 
   constructor(
-    private navCtrl: NavController,
+    private navCtrl: NavController, private mesaService: MesaService
   ) { }
 
   ngOnInit() {
   }
 
   goToGame_Master() {
-    this.navCtrl.navigateForward('/game-master');
+    this.navCtrl.navigateBack('/game-master');
+
+  }
+
+  createMesa() {
+    const nuevaMesa = {
+      nombre: this.mesaNombre,
+      tematica: this.mesaTema,
+      descripcion: 'none'
+    };
+
+    this.mesaService.createMesa(nuevaMesa).subscribe({
+      next: (response) => {
+        console.log('Mesa creada:', response);
+        this.navCtrl.navigateBack('/game-master');
+        // Redireccionar o limpiar el formulario si es necesario
+      },
+      error: (error) => {
+        console.error('Error al crear la mesa:', error);
+      }
+    });
+    
+  }
+  agregarPersonaje() {
+
   }
 }

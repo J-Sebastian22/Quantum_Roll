@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'game-master/manage-mesa',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
