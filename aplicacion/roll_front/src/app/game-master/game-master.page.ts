@@ -36,8 +36,8 @@ export class GameMasterPage implements OnInit {
     this.navCtrl.navigateForward('/game-master/new-mesa');
   }
 
-  goToManage_Mesa(mesaId:number) {
-    this.navCtrl.navigateForward('/game-master/manage-mesa/${mesaId}');
+  goToManage_Mesa(mesaId: number) {
+    this.navCtrl.navigateForward(`/game-master/manage-mesa/${mesaId}`);
   }
 
 }

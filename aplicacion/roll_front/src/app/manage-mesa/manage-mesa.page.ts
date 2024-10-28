@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { MesaService } from '../services/mesa.service';
 
 @Component({
   selector: 'app-manage-mesa',
@@ -9,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ManageMesaPage implements OnInit {
   mesaId!: number;
+  mesa: any;
 
   customActionSheetOptions = {
     header: 'Tematica',
@@ -18,10 +20,14 @@ export class ManageMesaPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private route: ActivatedRoute,
-  ) { }
+    private mesaService: MesaService,
+  ) { 
+    this.route.paramMap.subscribe(params => {
+      this.mesaId = +(params.get('mesaId') ?? 0);
+      this.loadMesaDetails(this.mesaId);
+  })}
 
   ngOnInit() {
-    this.mesaId = Number(this.route.snapshot.paramMap.get('id'));
   }
 
   goToModify_pj() {
@@ -30,5 +36,16 @@ export class ManageMesaPage implements OnInit {
 
   goToGame_Master() {
     this.navCtrl.navigateForward('/game-master');
+  }
+
+  loadMesaDetails(mesaId: number) {
+    this.mesaService.getMesaById(mesaId).subscribe(
+      (data) => {
+        this.mesa = data;
+      },
+      (error) => {
+        console.error('Error al cargar los detalles de la mesa:', error);
+      }
+    );
   }
 }

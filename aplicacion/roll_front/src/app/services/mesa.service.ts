@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MesaService {
 
-  private apiUrl = 'https://a605-38-10-180-1.ngrok-free.app/mesa/';
+  private apiUrl = 'http://127.0.0.1:8000/mesa/';
 
   constructor(private http: HttpClient) { }
   
@@ -17,6 +17,10 @@ export class MesaService {
 
   getMesas(): Observable<any> {
     return this.http.get(this.apiUrl);
+  }
+
+  getMesaById(mesaId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}${mesaId}/`);
   }
 
 }

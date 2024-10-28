@@ -33,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./new-mesa/new-mesa.module').then( m => m.NewMesaPageModule)
   },
   {
-    path: 'game-master/manage-mesa',
+    path: 'game-master/manage-mesa/:mesaId',
     loadChildren: () => import('./manage-mesa/manage-mesa.module').then( m => m.ManageMesaPageModule)
   },
   {
