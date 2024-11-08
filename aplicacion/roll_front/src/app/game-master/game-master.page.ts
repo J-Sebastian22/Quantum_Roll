@@ -20,6 +20,10 @@ export class GameMasterPage implements OnInit {
     this.loadMesas();
   }
 
+  ionViewWillEnter() {
+    this.loadMesas();  // Llama de nuevo al servicio que obtiene las mesas
+  }
+
   loadMesas() {
     this.mesaService.getMesas().subscribe({
       next: (response) => {

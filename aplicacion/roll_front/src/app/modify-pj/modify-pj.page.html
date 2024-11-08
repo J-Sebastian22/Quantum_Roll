@@ -152,12 +152,49 @@
                 </ion-list-header>
               <div class="inventory-container">
                 <ion-item class="inventory-item">
+                  <button popovertarget="my-popover">
+                    aaaa
+                  </button>
+                  <div class="emergente" id="my-popover" popover>
+                    <p>hola</p>
+                  </div>
                   <ion-img
                   src='/assets/images/wooden_sword.png'></ion-img>
                 </ion-item>
                 <ion-item class="inventory-item">
+                  <button id="open-modal" expand="block" class="modal-button">open-modal</button>
+                  <ion-modal #modal trigger="open-modal">
+                    <ng-template>
+                      <ion-content>
+                        <ion-toolbar>
+                          <ion-title>Cascos</ion-title>
+                          <ion-buttons slot="end">
+                            <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+                          </ion-buttons>
+                        </ion-toolbar>
+                  
+                        <ion-list>
+                          <ion-item>
+                            <ion-label position="stacked">Nombre del Ítem</ion-label>
+                            <ion-input placeholder="Ingresa el nombre del ítem" [(ngModel)]="nombreItem"></ion-input>
+                          </ion-item>
+                  
+                          <ion-item>
+                            <ion-label position="stacked">Imagen del Ítem</ion-label>
+                            <ion-img [src]="imagenItemUrl" alt="Imagen del ítem"></ion-img>
+                            <ion-button expand="block" (click)="cargarImagen()">Cargar Imagen</ion-button>
+                          </ion-item>
+                  
+                          <ion-item>
+                            <ion-label position="stacked">Estadística</ion-label>
+                            <ion-input type="number" placeholder="Estadística que da" [(ngModel)]="estadisticaItem"></ion-input>
+                          </ion-item>
+                        </ion-list>
+                      </ion-content>
+                    </ng-template>
+                  </ion-modal>
                   <ion-img
-                  src='/assets/images/wooden_sword.png'></ion-img>
+                  [src]='imagenItemUrl'></ion-img>
                 </ion-item>
                 <ion-item class="inventory-item">
                   <ion-img

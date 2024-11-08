@@ -1,4 +1,5 @@
 <ion-content class="game-master-page">
+  
   <div class="game-master-container">
 
     <h1 class="mesas-title">Mesas</h1>
@@ -7,13 +8,11 @@
     <div class="mesas-container">
       <ion-item *ngFor="let mesa of mesas" (click)="goToManage_Mesa(mesa.id)" class="mesa-item">
         {{ mesa.nombre }}
-        <p>{{ mesa.participantes || 0 }}</p> <!-- Muestra el número de participantes si existe, o 0 -->
+        <ion-item class="participantes" slot="end"><p>{{ mesa.participantes || 0 }}</p></ion-item> <!-- Muestra el número de participantes si existe, o 0 -->
       </ion-item>
-
-      <ion-fab-button color="dark" (click)="goToNew_Mesa()" class="add-mesa">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-
     </div>
+    <ion-fab-button color="dark" (click)="goToNew_Mesa()" class="add-mesa">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
   </div>
 </ion-content>
