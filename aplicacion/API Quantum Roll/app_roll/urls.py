@@ -10,7 +10,7 @@ router.register(r'personaje',views.PersonajeViewSet)
 router.register(r'pjconocido',views.PjConocidoViewSet)
 router.register(r'atributo',views.AtributoViewSet)
 router.register(r'equipamiento',views.EquipamientoViewSet)
-router.register(r'habilidade',views.HabilidadViewSet)
+router.register(r'habilidades',views.HabilidadViewSet)
 
 
 
@@ -19,5 +19,9 @@ urlpatterns = [
     path('', include(router.urls)),
     re_path('login',views.login),
     re_path('register',views.register),
-    re_path('profile',views.profile)
+    re_path('profile',views.profile),
+    path('mesas/gamemaster/<int:user_id>/', views.mesas_gamemaster, name='mesas_gamemaster'),
+    path('mesas/create/', views.MesaCreateView.as_view(), name='mesa-create'),
+
+
 ]

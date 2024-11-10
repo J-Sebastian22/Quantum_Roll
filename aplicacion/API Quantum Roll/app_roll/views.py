@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
@@ -7,11 +7,13 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication 
+from django.http import JsonResponse
+from .utils import obtener_mesas_gamemaster
 
 from django.contrib.auth.models import User
 
 from .models import  Mesa, MesaHasUsuario, Personaje, PjConocido, Atributo, Equipamiento, Habilidad
-from .serializer import UserSerializer, MesaSerializer, MesaHasUsuarioSerializer, PersonajeSerializer, PjConocidoSerializer, AtributoSerializer, EquipamientoSerializer, HabilidadSerializer
+from .serializer import UserSerializer, MesaSerializer, MesaHasUsuarioSerializer, PersonajeSerializer, PjConocidoSerializer, AtributoSerializer, EquipamientoSerializer, HabilidadSerializer, MesaCreateSerializer
 
 
 @api_view(['POST'])
@@ -102,3 +104,14 @@ class EquipamientoViewSet(viewsets.ModelViewSet):
 class HabilidadViewSet(viewsets.ModelViewSet):
     queryset = Habilidad.objects.all()
     serializer_class = HabilidadSerializer
+
+
+
+def mesas_gamemaster(request, user_id):
+    mesas_data = obtener_mesas_gamemaster(user_id)
+    return JsonResponse(mesas_data, safe=False)
+
+
+class MesaCreateView(generics.CreateAPIView):
+    queryset = Mesa.objects.all()
+    serializer_class = MesaCreateSerializer

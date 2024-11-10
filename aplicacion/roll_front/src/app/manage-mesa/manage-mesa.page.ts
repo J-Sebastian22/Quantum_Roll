@@ -10,7 +10,7 @@ import { MesaService } from '../services/mesa.service';
 })
 export class ManageMesaPage implements OnInit {
   mesaId!: number;
-  mesa: any;
+  mesa: any = {};
 
   customActionSheetOptions = {
     header: 'Tematica',
@@ -42,6 +42,7 @@ export class ManageMesaPage implements OnInit {
     this.mesaService.getMesaById(mesaId).subscribe(
       (data) => {
         this.mesa = data;
+        console.log("Dtos mesa:",this.mesa)
       },
       (error) => {
         console.error('Error al cargar los detalles de la mesa:', error);

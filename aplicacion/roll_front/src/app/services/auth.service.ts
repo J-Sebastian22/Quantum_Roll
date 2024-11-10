@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,13 @@ export class AuthService {
   }
 
   login(userData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}login/`, userData)
-  };
+    return this.http.post<any>(`${this.apiUrl}login/`, userData).pipe(
+      tap(response => {
+        // Accede al 'id' dentro de 'username' y guárdalo en el localStorage
+        localStorage.setItem('userId', response.username.id); 
+        console.log('userId saved:', localStorage.getItem('userId'));  
+      })
+    );
+  }
+  
 }

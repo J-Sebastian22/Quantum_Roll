@@ -14,13 +14,12 @@
     <div class="todo">
       <div class="mesas-container">
         <ion-item class="mesa-item">
-          <ion-input value="Reminiscencias" label="Nombre" label-placement="floating" placeholder="Ingrese el nombre"></ion-input>
-          <ion-item slot="end"><p>{{ mesaId }}</p></ion-item>
+          <ion-input [(ngModel)]="mesa.nombre" label="Nombre" label-placement="floating" placeholder="Ingrese el nombre"></ion-input>
         </ion-item>
 
         <ion-item class="mesa-item">
-          <ion-select value="FANTASIA" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" label="Tematica" label-placement="floating" placeholder="Seleccionar">
-            <ion-select-option value="medieval">Medieval</ion-select-option>
+          <ion-select [(ngModel)]="mesa.tematica" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" label="Tematica" label-placement="floating" placeholder="Seleccionar">
+            <ion-select-option value="FANTASIA">Fantasía</ion-select-option>
             <ion-select-option value="futurista">Futurista</ion-select-option>
             <ion-select-option value="moderno">Moderno</ion-select-option>
           </ion-select>

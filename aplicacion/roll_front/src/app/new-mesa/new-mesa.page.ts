@@ -49,6 +49,25 @@ export class NewMesaPage implements OnInit {
     });
     
   }
+
+  createMesaRol() {
+    const nuevaMesa = {
+      nombre: this.mesaNombre,
+      tematica: this.mesaTema,
+      descripcion: this.mesaDescripcion || 'none',
+    };
+
+    this.mesaService.createMesaRol(nuevaMesa).subscribe({
+      next: (response) => {
+        console.log('Mesa creada:', response);
+        this.navCtrl.navigateBack('/game-master'); // Redireccionar a la página de "game-master"
+      },
+      error: (error) => {
+        console.error('Error al crear la mesa:', error);
+      },
+    });
+  }
+
   agregarPersonaje() {
 
   }

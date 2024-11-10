@@ -19,8 +19,20 @@ export class MesaService {
     return this.http.get(this.apiUrl);
   }
 
+  
   getMesaById(mesaId: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}${mesaId}/`);
+  }
+
+  getMesasGamemaster(userId: number) {
+    return this.http.get<any[]>(`http://127.0.0.1:8000/mesas/gamemaster/${userId}`);
+    
+  }
+
+  createMesaRol(mesa: any): Observable<any> {
+    mesa.user_id = localStorage.getItem('userId'); // user_id guardado en el localStorage
+    console.log("Datos enviados:", mesa); // Verifica que user_id esté presente
+    return this.http.post<any>(`http://127.0.0.1:8000/mesas/create/`, mesa);
   }
 
 }

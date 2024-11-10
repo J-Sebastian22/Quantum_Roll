@@ -42,4 +42,31 @@ class HabilidadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Habilidad
         fields = '__all__'
+    
+    
+    
+class MesaCreateSerializer(serializers.ModelSerializer):
+    
+    user_id = serializers.IntegerField(write_only=True)  # Campo para recibir el ID del usuario desde el frontend
+
+    class Meta:
+        model = Mesa
+        fields = ['nombre','tematica', 'descripcion' , 'user_id']  # Incluye el campo user_id
         
+    def create(self, validated_data):
+        # Extrae el user_id del validated_data
+        user_id = validated_data.pop('user_id')
+    
+        # Crear la mesa
+        mesa = Mesa.objects.create(**validated_data)
+    
+        # Obtén el usuario a partir del user_id
+        user = User.objects.get(id=user_id)
+
+        # Crear la relación MesaHasUsuario para asignar el rol de Gamemaster
+        MesaHasUsuario.objects.create(mesa=mesa, usuario=user, rol='GAMEMASTER')
+
+        return mesa
+
+
+    
