@@ -19,6 +19,8 @@ class MesaHasUsuarioSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PersonajeSerializer(serializers.ModelSerializer):
+    usuario = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)
+
     class Meta:
         model = Personaje
         fields = '__all__'

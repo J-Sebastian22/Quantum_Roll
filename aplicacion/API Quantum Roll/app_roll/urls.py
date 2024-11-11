@@ -22,6 +22,7 @@ urlpatterns = [
     re_path('profile',views.profile),
     path('mesas/gamemaster/<int:user_id>/', views.mesas_gamemaster, name='mesas_gamemaster'),
     path('mesas/create/', views.MesaCreateView.as_view(), name='mesa-create'),
-
+    path('mesas/<int:mesa_id>/crear_personaje_basico/', views.crear_personaje_basico, name='crear_personaje_basico'),
+    path('mesas/<int:mesa_id>/personajes/', views.listar_personajes_mesa, name='listar_personajes_mesa'),
 
 ]

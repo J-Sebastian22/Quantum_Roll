@@ -27,30 +27,25 @@ class MesaHasUsuario(models.Model):
         unique_together = ('mesa', 'usuario')
 
 class Personaje(models.Model):
-    nombre = models.CharField(max_length=45)
-    edad = models.IntegerField()
-    altura = models.FloatField()
+    nombre = models.CharField(max_length=45, null=True, blank=True)
+    edad = models.IntegerField(null=True, blank=True, default=0)
+    altura = models.FloatField(null=True, blank=True, default=0.0)
     apodo = models.CharField(max_length=45, null=True, blank=True)
-    nivel = models.IntegerField()
-    hp_base = models.IntegerField()
-    hp_actuales = models.IntegerField()
-    bloqueo = models.IntegerField()
-    esquivar = models.IntegerField()
-    ataque = models.IntegerField()
+    nivel = models.IntegerField(default=1)
+    hp_base = models.IntegerField(default=100)
+    hp_actuales = models.IntegerField(default=100)
+    bloqueo = models.IntegerField(default=0)
+    esquivar = models.IntegerField(default=0)
+    ataque = models.IntegerField(default=0)
     mesa = models.ForeignKey(Mesa, on_delete=models.CASCADE)
-    usuario = models.ForeignKey(MesaHasUsuario, on_delete=models.CASCADE)
-
-    def clean(self):
-        # Validar que el usuario tenga el rol de JUGADOR
-        if self.usuario.rol != 'JUGADOR':
-            raise ValidationError('El personaje solo puede ser asignado a un usuario con el rol de JUGADOR.')
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         self.clean()
         super().save(*args, **kwargs)
     
-    """ class Meta:
-        unique_together = ('mesa', 'usuario') """ #Valida que el usuario solo tenga un PERSONAJE por MESA
+    class Meta:
+        unique_together = ('mesa', 'usuario')
 
 class PjConocido(models.Model):
     personaje = models.ForeignKey(Personaje, on_delete=models.CASCADE)

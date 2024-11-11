@@ -1,5 +1,5 @@
 from rest_framework import viewsets, generics
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, APIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework import status
@@ -115,3 +115,54 @@ def mesas_gamemaster(request, user_id):
 class MesaCreateView(generics.CreateAPIView):
     queryset = Mesa.objects.all()
     serializer_class = MesaCreateSerializer
+    
+
+
+@api_view(['POST'])
+def crear_personaje_basico(request, mesa_id):
+    try:
+        mesa = Mesa.objects.get(id=mesa_id)
+
+        # Creamos el personaje sin asignar un usuario
+        personaje = Personaje.objects.create(
+            mesa=mesa, 
+            usuario=None,  # No asignamos usuario en este momento
+            nombre="", 
+            edad=0, 
+            altura=0.0, 
+            nivel=1, 
+            hp_base=100, 
+            hp_actuales=100, 
+            bloqueo=0, 
+            esquivar=0, 
+            ataque=0
+        )
+        
+        # Serializamos el personaje recién creado
+        serializer = PersonajeSerializer(personaje)
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    except Mesa.DoesNotExist:
+        return Response({"error": "Mesa no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+    
+@api_view(['GET'])
+def listar_personajes_mesa(request, mesa_id):
+    try:
+        # Obtener la mesa
+        mesa = Mesa.objects.get(id=mesa_id)
+
+        # Obtener los personajes asociados a esa mesa
+        personajes = Personaje.objects.filter(mesa=mesa)
+
+        # Serializar solo el ID de cada personaje
+        personajes_data = [{"id": personaje.id} for personaje in personajes]
+
+        return Response(personajes_data, status=status.HTTP_200_OK)
+
+    except Mesa.DoesNotExist:
+        return Response({"error": "Mesa no encontrada"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

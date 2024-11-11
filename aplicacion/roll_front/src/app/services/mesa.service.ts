@@ -35,4 +35,12 @@ export class MesaService {
     return this.http.post<any>(`http://127.0.0.1:8000/mesas/create/`, mesa);
   }
 
+  crearPersonajeBasico(mesaId: number) {
+    return this.http.post(`http://127.0.0.1:8000/mesas/${mesaId}/crear_personaje_basico/`, {});
+  }
+
+  getPersonajes(mesaId: number) {
+    return this.http.get<any[]>(`http://127.0.0.1:8000/mesas/${mesaId}/personajes/`);
+  }
+
 }
