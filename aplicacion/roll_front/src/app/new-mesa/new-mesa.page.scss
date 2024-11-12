@@ -1,80 +1,76 @@
-ion-toolbar {
-    --background: #000000da;
+ion-button{
+    width: 50px;
+    height: 20px;
 }
 
 .game-master-page {
-    --background: url('/assets/images/2.jpg') no-repeat center center/cover;
-
+    --background: url('/assets/images/mesa.gif') no-repeat center center/cover;
+  
     .game-master-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+  
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
         .mesas-title {
-            font-family: garamond;
-            font-size: 1.5em;
-            font-weight: bold;
-            letter-spacing: 5px;
-            color: #dfd5a6;
-            text-shadow: 2px 2px 16px rgb(0, 0, 0);
-            margin-bottom: -5px;
-        }
-
-        hr {
-            width: 250px;
-            height: 0px;
-            border: 1px solid #dfd5a6;
-            margin-bottom: 30px;
-        }
-
-        .todo {
-            width: auto;
-            height: 500px;
-            background: #4d4d4d9a;
-            padding: 25px 20px 0px 20px;
-            border-radius: 10px;
+            font-family: 'Cinzel Decorative', serif; /* Aplica la fuente al título */
+            font-size: 2em;
+            color: #ffc107; /* Cambia el color para hacerlo más llamativo */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade un efecto de sombra */
             text-align: center;
-            position: relative;
-            
-            a{
-                right: 0;
-                position: absolute;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                margin: 20px;
-                text-decoration: none;
-            }
-
-            .mesas-container {
-                display: flex;
-            }
-    
-            .mesa-item {
-                font-family: 'Chau Philomene One';
-                --background: #babababe;
-                --color: #322e20;
-                --placeholder-color: rgba(255, 255, 255, 0.6);
-                --highlight-color-focused: #f4d03f;
-                margin-bottom: 15px;
-                margin-right: 10px;
-                border-radius: 30px;
-                text-transform: uppercase;
-                width: 100%;
-            }
         }
-
-        ion-fab-button {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            margin: 10px;
+  
+      hr {
+        width: 250px;
+        height: 0px;
+        border: 1px solid #ffc107;
+        margin-bottom: 30px;
+        margin-top:-10px;
+      }
+  
+      .todo {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        background: #4d4d4d9a;
+        padding: 25px 20px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        margin-top: 200px;
+        margin-bottom: 20px;
+  
+        .mesas-container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
         }
-      
-        ion-icon {
-            margin-right: 0px;
+  
+        .mesa-item {
+          font-family: 'Chau Philomene One', sans-serif;
+          --background: #babababe;
+          --color: #322e20;
+          --placeholder-color: rgba(255, 255, 255, 0.6);
+          --highlight-color-focused: #f4d03f;
+          margin-bottom: 15px;
+          margin-right: 10px;
+          border-radius: 30px;
+          text-transform: uppercase;
+          width: 100%;
         }
+  
+        ion-textarea {
+          --background: #babababe;
+          --color: #322e20;
+          --placeholder-color: rgba(255, 255, 255, 0.6);
+          --highlight-color-focused: #f4d03f;
+          height: 100px;
+        }
+      }
     }
-}
+  }
+  

@@ -14,11 +14,63 @@ export class ModifyPjPage implements OnInit {
   imagenItemUrl: string = '/assets/images/wooden_sword.png'; // Imagen por defecto o vacío
   estadisticaItem: number | null = null;
 
-  habilidades = {
-    fuerza: 10, // Valor inicial de la habilidad
-    destreza: 5  // Valor inicial de la habilidad
+  
+
+  habilidades: any[] = [
+    {
+      id: 1,
+      nombre: 'Golpe Poderoso',
+      descripcion: 'Realiza un golpe con gran daño a un enemigo.',
+      nivel: 3,
+    },
+    {
+      id: 2,
+      nombre: 'Escudo Mágico',
+      descripcion: 'Genera un escudo que reduce el daño recibido durante un tiempo.',
+      nivel: 2,
+    },
+    {
+      id: 3,
+      nombre: 'Curación',
+      descripcion: 'Recupera una porción de la salud perdida.',
+      nivel: 4,
+    },
+  ];
+
+  grupo1 = [
+    { nombre: 'Fuerza', sumarAlDado: -1 },
+    { nombre: 'Destreza', sumarAlDado: 1 },
+    { nombre: 'Constitución', sumarAlDado: 1 },
+    { nombre: 'Inteligencia', sumarAlDado: 1 },
+    { nombre: 'Sabiduría', sumarAlDado: 1 },
+    { nombre: 'Apariencia', sumarAlDado: 1 },
+  ];
+
+  grupo2 = [
+    { nombre: 'Estamina', sumarAlDado: 0 },
+    { nombre: 'Balance', sumarAlDado: 1 },
+    { nombre: 'Resistencia', sumarAlDado: 1 },
+    { nombre: 'Conocimiento', sumarAlDado: 1 },
+    { nombre: 'F. Voluntad', sumarAlDado: 4 },
+    { nombre: 'Carisma', sumarAlDado: 1 },
+  ];
+
+  grupo3 = [
+    { nombre: 'Musculatura', sumarAlDado: 0 },
+    { nombre: 'Puntería', sumarAlDado: 1 },
+    { nombre: 'Salud', sumarAlDado: 1 },
+    { nombre: 'Lógica', sumarAlDado: 1 },
+    { nombre: 'Intuición', sumarAlDado: 1 },
+    { nombre: 'Verborrea', sumarAlDado: 1 },
+  ];
+
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400
   };
 
+  
+  
   constructor(
     private navCtrl: NavController,
     private mesaService: MesaService,
@@ -30,6 +82,7 @@ export class ModifyPjPage implements OnInit {
   goToManage_Mesa() {
     this.navCtrl.navigateBack('/game-master/manage-mesa/${mesaId}');
   }
+
 
   async cargarImagen() {
     try {

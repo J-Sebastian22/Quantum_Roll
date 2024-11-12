@@ -10,7 +10,7 @@ ion-toolbar {
 
 
 .game-master-page {
-    --background: url('/assets/images/2.jpg') no-repeat center center/cover;
+    --background: url('/assets/images/hoguera.gif') no-repeat center center/cover;
 
     .game-master-container {
         display: flex;
@@ -19,14 +19,15 @@ ion-toolbar {
         align-items: center;
         padding: 10px;
 
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
         .title {
-            font-family: garamond;
-            font-size: 1.5em;
-            font-weight: bold;
-            letter-spacing: 5px;
-            color: #dfd5a6;
-            text-shadow: 2px 2px 16px rgb(0, 0, 0);
+            font-family: 'Cinzel Decorative', serif; /* Aplica la fuente al título */
+            font-size: 2em;
+            color: #ffc107; /* Cambia el color para hacerlo más llamativo */
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade un efecto de sombra */
+            text-align: center;
         }
 
         .title-personajes {
@@ -43,7 +44,7 @@ ion-toolbar {
         hr {
             width: 80%;
             height: 0px;
-            border: 1px solid #dfd5a6;
+            border: 1px solid #ffc107;
             margin-bottom: 30px;
             margin-top: -22px;
         }
@@ -62,7 +63,6 @@ ion-toolbar {
                 width: 9vh;
                 height: 9vh;
                 border-radius: 50%;
-
                 text-decoration: none;
             }
 
@@ -80,49 +80,74 @@ ion-toolbar {
                 --color: #322e20;
                 --placeholder-color: rgba(255, 255, 255, 0.6);
                 --highlight-color-focused: #f4d03f;
-                margin: 0px 10px 15px 10px;
+                margin: 0px 10px 5px 10px;
                 border-radius: 15px;
                 text-transform: uppercase;
                 width: 100%;
             }
 
+            
             .personajes-container {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
-                background: #4d4d4d96;
-                border-radius: 15px;
                 position: relative;
                 height: 55vh;
                 padding-bottom: 70px;
-
-                h2{
-                    display: block;
-                    align-items: center;
-                    width: 100%;
-                }
-                .scroll{
-                    overflow-y: auto;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    background: #4d4d4d00;
-                    border-radius: 15px;
-                    position: relative;
-                    height: 38vh;
-
-                    .personaje-item {
-                        font-family: 'Chau Philomene One';
-                        --background: #babababe;
-                        --color: #322e20;
-                        --placeholder-color: rgba(255, 255, 255, 0.6);
-                        --highlight-color-focused: #f4d03f;
-                        margin: 15px 10px 15px 10px;
-                        border-radius: 15px;
-                        text-transform: uppercase;
-                        width: 40%;
-                    }
-                }
+            }
+            
+            .blur-background {
+                position: absolute; /* Coloca el fondo detrás del contenido */
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #4d4d4d96; /* El fondo semitransparente */
+                backdrop-filter: blur(2px); /* Aplica el blur solo a este fondo */
+                border-radius: 15px;
+                z-index: 1; /* Asegura que el fondo esté detrás del contenido */
+            }
+            
+            .content {
+                position: relative;
+                z-index: 2; /* Asegura que el contenido esté por encima del fondo con blur */
+                width: 100%;
+                padding: 20px;
+            }
+            
+            h2 {
+                display: block;
+                width: 100%;
+                font-family: 'Cinzel Decorative', serif;
+                font-size: 2em;
+                color: #ffc107;
+                margin-bottom: 10px;
+                margin-top: -10px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                text-align: center;
+            }
+            
+            .scroll {
+                overflow-y: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                background: #ffffff00;
+                border-radius: 15px;
+                position: relative;
+                height: 36vh;
+            }
+            
+            .personaje-item {
+                font-family: 'Chau Philomene One', sans-serif;
+                --background: #818181;
+                --color: #322e20;
+                --placeholder-color: rgba(255, 255, 255, 0.6);
+                --highlight-color-focused: #f4d03f;
+                margin: 15px 10px 15px 10px;
+                border-radius: 15px;
+                text-transform: uppercase;
+                width: 40%;
             }
         }
 
@@ -143,7 +168,7 @@ ion-toolbar {
             font-weight: bold;
             justify-content: center;
             align-items: center;
-
+            z-index: 2;
         }
       
         ion-icon {

@@ -7,162 +7,96 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-content [fullscreen]="true" class="game-master-page">
+<ion-content class="game-master-page">
+  <ion-title class="title" >Gestión de PJ</ion-title>
   <ion-tabs>
     <ion-tab tab="stats">
-      <div class="game-master-container">
-    
-        <h1 class="title">Modificar Personaje</h1>
-        <hr>
-          <div class="todo">
-            <div class="personajes-container">
-              <h2 class="title-personajes">Sigma</h2>
-              <ion-list lines="inset">
-                <ion-list-header>
-                  Estadisticas
-                </ion-list-header>
-
-                <ion-item>
-                  <ion-label>Fuerza</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-                </ion-item>
-                <ion-item>
-                  <ion-label>Destreza</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Constitucion</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Inteligencia</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Sabiduria</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Apariencia</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Estamina</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Balance</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Resistencia</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Conocimiento</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Fuerza Voluntad</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Carisma</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Musculatura</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Punteria</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Salud</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Logica</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Intuicion</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-                <ion-item>
-                  <ion-label>Verborrea</ion-label>
-                  <ion-input value="0" slot="end" type="number" maxlength="2" max="72" min="0"></ion-input>  
-
-                </ion-item>
-              </ion-list>
+      <hr>
+      <ion-title class="title2">Estadísticas</ion-title>
+      <ion-scroll scroll-x="true" scroll-y="false" class="horizontal-scroll">
+        <div class="scroll-container">
+          <!-- Grupo 1 -->
+          <div class="group">
+            <div class="header-row">
+              <span class="header-title">Nombre</span>
+              <span class="header-title">Se le suma al dado</span>
+            </div>
+            <div *ngFor="let characteristic of grupo1" class="stat-item">
+              <span class="stat-name">{{ characteristic.nombre }}</span>
+              <ion-input
+                type="number"
+                [(ngModel)]="characteristic.sumarAlDado"
+                class="stat-input"
+              ></ion-input>
             </div>
           </div>
-      </div>
+  
+          <!-- Grupo 2 -->
+          <div class="group">
+            <div class="header-row">
+              <span class="header-title">Nombre</span>
+              <span class="header-title">Se le suma al dado</span>
+            </div>
+            <div *ngFor="let characteristic of grupo2" class="stat-item">
+              <span class="stat-name">{{ characteristic.nombre }}</span>
+              <ion-input
+                type="number"
+                [(ngModel)]="characteristic.sumarAlDado"
+                class="stat-input"
+              ></ion-input>
+            </div>
+          </div>
+  
+          <!-- Grupo 3 -->
+          <div class="group">
+            <div class="header-row">
+              <span class="header-title">Nombre</span>
+              <span class="header-title">Se le suma al dado</span>
+            </div>
+            <div *ngFor="let characteristic of grupo3" class="stat-item">
+              <span class="stat-name">{{ characteristic.nombre }}</span>
+              <ion-input
+                type="number"
+                [(ngModel)]="characteristic.sumarAlDado"
+                class="stat-input"
+              ></ion-input>
+            </div>
+          </div>
+        </div>
+      </ion-scroll>
     </ion-tab>
 
     <ion-tab tab="skills">
-      <div class="game-master-container">
-        <h1 class="title">Modificar Personaje</h1>
-        <hr>
-          <div class="todo">
-            <div class="personajes-container">
-              <h2 class="title-personajes">Sigma</h2>
-              <ion-list>
-                <ion-list-header>
-                  Habilidades
-                </ion-list-header>
-                <ion-label>Premonicion de combate</ion-label><ion-range [ticks]="true" [snaps]="true" min="0" max="10" pin="true" color="secondary"></ion-range>
-                <ion-label>Canto magico</ion-label><ion-range [ticks]="true" [snaps]="true" min="0" max="10" [pin]="true" color="secondary"></ion-range>
-                <ion-fab-button color="dark" >
-                  <ion-icon name="add"></ion-icon>
-                </ion-fab-button>
-              </ion-list>          
-            </div>
-          </div>
-      </div>
+      <hr>
+      <ion-title class="title3">Habilidades</ion-title>
+      <ion-list>
+        <ion-item *ngFor="let habilidad of habilidades">
+          <ion-label>
+            <h2>{{ habilidad.nombre }}</h2>
+            <p>{{ habilidad.descripcion }}</p>
+            <ion-range min="1" max="5" step="1" [(ngModel)]="habilidad.nivel">
+              <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
+              <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+            </ion-range>
+            <p>Nivel: {{ habilidad.nivel }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
     </ion-tab>
 
     <ion-tab tab="bag">
+      <hr>
       <div class="game-master-container">
-        <h1 class="title">Modificar Personaje</h1>
-        <hr>
+        <ion-title class="title3">Inventario</ion-title>
           <div class="todo">
             <div class="personajes-container">
-              <h2 class="title-personajes">Sigma</h2>
               <ion-list lines="none">
-                <ion-list-header>
-                  Inventario
-                </ion-list-header>
               <div class="inventory-container">
-                <ion-item class="inventory-item">
-                  <button popovertarget="my-popover">
-                    aaaa
-                  </button>
-                  <div class="emergente" id="my-popover" popover>
-                    <p>hola</p>
-                  </div>
+                <ion-item class="inventory-item" id="open-modal">
                   <ion-img
                   src='/assets/images/wooden_sword.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item">
-                  <button id="open-modal" expand="block" class="modal-button">open-modal</button>
+                <ion-item class="inventory-item" id="open-modal">
                   <ion-modal #modal trigger="open-modal">
                     <ng-template>
                       <ion-content>
@@ -196,11 +130,11 @@
                   <ion-img
                   [src]='imagenItemUrl'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item">
+                <ion-item class="inventory-item" id="open-modal">
                   <ion-img
                   src='/assets/images/wooden_sword.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item">
+                <ion-item class="inventory-item" id="open-modal">
                   <ion-img
                   src='/assets/images/wooden_sword.png'></ion-img>
                 </ion-item>

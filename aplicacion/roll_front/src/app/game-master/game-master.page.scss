@@ -21,7 +21,7 @@
         hr {
             width: 250px;
             height: 0px;
-            border: 1px solid #dfd5a6;
+            border: 1px solid #ffc107;
             margin-bottom: 30px;
         }
 
@@ -39,14 +39,15 @@
             --background: none;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
         .mesas-title {
-            font-family: garamond;
-            font-size: 1.5em;
-            font-weight: bold;
-            letter-spacing: 5px;
-            color: #dfd5a6;
-            text-shadow: 2px 2px 16px rgb(0, 0, 0);
-            margin-bottom: -5px;
+            font-family: 'Cinzel Decorative', serif; /* Aplica la fuente al título */
+            font-size: 2em;
+            color: #ffc107; /* Cambia el color para hacerlo más llamativo */
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade un efecto de sombra */
+            text-align: center;
         }
 
         .mesa-item {

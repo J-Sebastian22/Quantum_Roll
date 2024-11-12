@@ -1,58 +1,50 @@
 .rol-page {
-    --background: url('/assets/images/fondo.jpg') no-repeat center center/cover;
+    --background: url('/assets/images/ojo.gif') no-repeat center center/cover;
     min-height: 100vh;
-    overflow-y: auto;
-    align-items: center; 
-
-    .ion-modal {
-        --border-radius: 30px;
-        --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgba(255, 255, 255, 0.1);
-    }
-      
-    .ion-modal::part(backdrop) {
-        background: rgba(209, 213, 219);
-        opacity: 1;
-    }
-
-    .ion-toolbar {
-        --background: rgb(14 116 144);
-        --color: rgb(221, 8, 8);
-    }
-
-    .rol-title {
-        font-family: 'MedievalSharp', serif;  /* Fuente con estilo medieval */
-        font-size: 1.5em auto;
-        color: #ffffff;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-        margin-bottom: 30px;
-    }
-
-    .rol-container {
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background: #b9b9b9a2;
-        position: absolute;
-        text-align: center;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        .rol-button {    
-            margin-top: 20px;
-            border-radius: 15px;
-            font-family: 'MedievalSharp', serif;
-            color: #f4d03f;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-            transition: background-color 0.3s ease;
-            width: 80%;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necesario para posicionar el contenido respecto a este contenedor */
   
-            &:hover {
-                background-color: #8a634f;
-            }
+    .rol-container {
+      position: absolute;
+      bottom: 0; /* Lo coloca en la parte baja de la pantalla */
+      width: 100%;
+      background: rgba(91, 91, 91, 0.7); /* Fondo semi-transparente */
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      max-width: 500px; /* Limita el ancho en pantallas grandes */
+      margin-bottom: 20px; /* Espacio desde la parte baja de la pantalla */
+      text-align: center;
+      color: white;
+  
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+        .rol-title {
+            font-family: 'Cinzel Decorative', serif; /* Aplica la fuente al título */
+            font-size: 2em;
+            color: #ffc107; /* Cambia el color para hacerlo más llamativo */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade un efecto de sombra */
+            text-align: center;
         }
+  
+      .rol-button {
+        margin-top: 10px;
+        border-radius: 15px;
+        font-family: 'MedievalSharp', serif;
+        color: #f4d03f;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        transition: background-color 0.3s ease;
+        width: 80%;
+  
+        &:hover {
+          background-color: #8a634f;
+        }
+      }
     }
-}
+  }
+  

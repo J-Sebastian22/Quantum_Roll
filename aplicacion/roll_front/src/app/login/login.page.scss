@@ -1,62 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
 .login-page {
-    --background: url('/assets/images/fondo.jpg') no-repeat center center/cover;
+  background-color: #333;
+  color: #fff;
+}
 
-    .login-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+.image-container {
+  background: none;
+  height: 50vh;
+}
 
-        .logo {
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-            margin-top: 40px;
-        }
+.login-container {
+  background: linear-gradient(to top, #1c1c1c, transparent); /* Degradado de negro a transparente */
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  //top: -20px;
+}
 
-        .login-title {
-            font-family: 'MedievalSharp', serif;
-            font-size: 1.5em;
-            color: #ffffff;
-            text-shadow: 2px 2px 16px rgb(0, 0, 0);
-            margin-bottom: 30px;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
-        .input-item {
-            --background: rgba(255, 255, 255, 0.507);
-            --color: #ffffff;
-            --placeholder-color: rgba(255, 255, 255, 0.6);
-            --highlight-color-focused: #f4d03f;
-            margin-bottom: 20px;
-        }
+.login-title {
+  font-family: 'Cinzel Decorative', serif; /* Aplica la fuente al título */
+  font-size: 2em;
+  color: #ffc107; /* Cambia el color para hacerlo más llamativo */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade un efecto de sombra */
+  text-align: center;
+}
 
-        .login-button {
-            margin-top: 40px;
-            border-radius: 15px;
-            font-family: 'MedievalSharp', serif;
-            color: #f4d03f;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-            transition: background-color 0.3s ease;
-      
-            &:hover {
-              background-color: #8a634f;
-            }
-      
-            ion-icon {
-              margin-right: 0px;
-            }
-        }
-    }
+.input-item {
+  margin-bottom: 10px;
+  --background: #444; /* Fondo oscuro para los campos de entrada */
+  border-radius: 8px;
+}
 
-    .register-redirect{
-        color: #ffffff;
-        margin-top: 50px;
-        text-shadow: 6px 6px 16px rgb(0, 0, 0);
-      }
+.login-button {
+  margin-top: 20px;
+  --background: #555; /* Color de fondo del botón */
+  color: #fff;
+}
 
-      span {
-        text-decoration: underline;
-        cursor: pointer;
-      }
+.register-redirect {
+  margin-top: 20px;
+  color: #ffc107;
+}
+
+.register-redirect span {
+  cursor: pointer;
+  color: #ffc107;
+  text-decoration: underline;
 }

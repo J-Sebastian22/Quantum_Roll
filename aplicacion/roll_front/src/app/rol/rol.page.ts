@@ -44,4 +44,8 @@ export class RolPage {
   goToJugador(){
     this.navCtrl.navigateForward('/jugador')
   }
+
+  goToManual(){
+    this.navCtrl.navigateForward('/manual')
+  }
 }

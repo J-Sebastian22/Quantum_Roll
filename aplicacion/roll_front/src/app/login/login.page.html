@@ -1,28 +1,30 @@
 <ion-content [fullscreen]="true" class="login-page">
-  <div class="login-container">
-    <img src="assets/images/logoDrag.png" class="logo" alt="Logo de la app">
+  <div class="image-container">
+    <img src="assets/images/log.gif" alt="Imagen de acceso">
+  </div>
 
-    <h1 class="login-title">Acceso a la taberna</h1>
+  <div class="login-container">
+    <h1 class="login-title">Quantum Roll</h1>
 
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <ion-item class="input-item">
-        <ion-icon name="person-outline" color="dark"></ion-icon>
-        <ion-input formControlName="username" label="Usuario" label-placement="floating" color="dark" placeholder="Joaquin54" type="text"></ion-input>
+        <ion-icon name="person-outline" slot="start" color="light"></ion-icon>
+        <ion-input formControlName="username" label="Usuario" label-placement="floating" color="light" placeholder="Usuario"></ion-input>
       </ion-item>
 
       <ion-item class="input-item">
-        <ion-icon name="key-outline" color="dark"></ion-icon>
-        <ion-input formControlName="password" label="Contraseña" label-placement="floating" color="dark" placeholder="*********" type="password">
-          <ion-input-password-toggle color="dark" slot="end"></ion-input-password-toggle>
+        <ion-icon name="key-outline" slot="start" color="light"></ion-icon>
+        <ion-input formControlName="password" label="Contraseña" label-placement="floating" color="light" placeholder="Contraseña" type="password">
+          <ion-input-password-toggle color="light" slot="end"></ion-input-password-toggle>
         </ion-input>
       </ion-item>
 
-      <ion-button color="dark" expand="block" type="submit" [disabled]="loginForm.invalid" class="login-button">
+      <ion-button color="light" expand="block" type="submit" [disabled]="loginForm.invalid" class="login-button">
         <ion-icon name="log-in-outline"></ion-icon>
         Ingresar a la aventura
       </ion-button>
     </form>
 
-    <p class="register-redirect">¿No tienes una cuenta? <span (click)="goToRegister()">Registrate aquí</span> </p>
+    <p class="register-redirect">¿No tienes una cuenta? <span (click)="goToRegister()">Regístrate aquí</span></p>
   </div>
 </ion-content>

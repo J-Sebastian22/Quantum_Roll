@@ -40,6 +40,7 @@ const routes: Routes = [
     path: 'game-master/modify-pj',
     loadChildren: () => import('./modify-pj/modify-pj.module').then( m => m.ModifyPjPageModule)
   },
+
 ];
 
 @NgModule({

@@ -5,9 +5,6 @@
     <div class="mesas-container">
       <ion-item *ngFor="let mesa of mesasGamemaster" (click)="goToManage_Mesa(mesa.id)" class="mesa-item">
         {{ mesa.nombre }}
-        <ion-item class="participantes" slot="end">
-          <p>{{ mesa.participantes || 0 }}</p> <!-- Muestra el número de participantes si existe, o 0 -->
-        </ion-item>
       </ion-item>
     </div>
     <ion-fab-button color="dark" (click)="goToNew_Mesa()" class="add-mesa">

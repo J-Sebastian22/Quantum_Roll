@@ -1,6 +1,6 @@
 <ion-toolbar>
-  <ion-button color="dark" (click)="goToGame_Master()"> Atras </ion-button> 
-  <ion-button slot="end" color="dark" (click)="createMesaRol()"> Confirmar </ion-button>
+  <ion-button color="dark" (click)="goToGame_Master()" ><ion-icon name="arrow-back-outline"></ion-icon></ion-button> 
+  <ion-button slot="end" color="dark" (click)="createMesaRol()"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
 </ion-toolbar>
 
 <ion-content class="game-master-page">
@@ -11,18 +11,23 @@
 
     <div class="todo">
       <div class="mesas-container">
+        <!-- Campo Nombre -->
         <ion-item class="mesa-item">
           <ion-input [(ngModel)]="mesaNombre" label="Nombre" label-placement="floating" placeholder="Ingrese el nombre" required></ion-input>
         </ion-item>
 
+        <!-- Campo Temática -->
         <ion-item class="mesa-item">
-          <ion-select [(ngModel)]="mesaTema" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" label="Tematica" label-placement="floating" placeholder="Seleccionar">
-            <ion-select-option value="medieval">Medieval</ion-select-option>
+          <ion-select [(ngModel)]="mesaTema" [interfaceOptions]="customActionSheetOptions" interface="action-sheet" label="Tematica" label-placement="floating" placeholder="Seleccionar">  
             <ion-select-option value="CIENCIA_FICCION">Ciencia Ficción</ion-select-option>
             <ion-select-option value="FANTASIA">Fantasía</ion-select-option>
           </ion-select>
         </ion-item>
 
+        <!-- Campo Descripción (nuevo) -->
+        <ion-item class="mesa-item">
+          <ion-textarea [(ngModel)]="mesaDescripcion" label="Descripción" label-placement="floating" placeholder="Ingrese una descripción" rows="4"></ion-textarea>
+        </ion-item>
       </div>
     </div>
   </div>  

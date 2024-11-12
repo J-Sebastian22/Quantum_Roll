@@ -26,12 +26,15 @@
         </ion-item>
       </div>
       <div class="personajes-container">
+        <div class="blur-background"></div> <!-- Fondo con blur -->
+        <div class="content">
           <h2>Personajes</h2>
           <div class="scroll">
             <ion-item  (click)="goToModify_pj()" class="personaje-item"  *ngFor="let personaje of personajes">
               <ion-label>ID: {{ personaje.id }}</ion-label>
             </ion-item>
           </div>
+        </div>
         <ion-fab-button color="dark" (click)="crearPersonajeBasico()" class="add-personaje">
           <ion-icon name="add"></ion-icon>
         </ion-fab-button>
