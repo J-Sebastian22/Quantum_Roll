@@ -1,6 +1,12 @@
 ion-toolbar {
-    --background: none;
+    --background: rgba(4, 255, 0, 0);
+
+    .toolbar-background{
+        --background: red;
+    }
+
 }
+
 
 
 .game-master-page {
@@ -87,19 +93,35 @@ ion-toolbar {
                 background: #4d4d4d96;
                 border-radius: 15px;
                 position: relative;
-                height: 80%;
+                height: 55vh;
                 padding-bottom: 70px;
 
-                .personaje-item {
-                    font-family: 'Chau Philomene One';
-                    --background: #babababe;
-                    --color: #322e20;
-                    --placeholder-color: rgba(255, 255, 255, 0.6);
-                    --highlight-color-focused: #f4d03f;
-                    margin: 15px 10px 15px 10px;
+                h2{
+                    display: block;
+                    align-items: center;
+                    width: 100%;
+                }
+                .scroll{
+                    overflow-y: auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    background: #4d4d4d00;
                     border-radius: 15px;
-                    text-transform: uppercase;
-                    width: 40%;
+                    position: relative;
+                    height: 38vh;
+
+                    .personaje-item {
+                        font-family: 'Chau Philomene One';
+                        --background: #babababe;
+                        --color: #322e20;
+                        --placeholder-color: rgba(255, 255, 255, 0.6);
+                        --highlight-color-focused: #f4d03f;
+                        margin: 15px 10px 15px 10px;
+                        border-radius: 15px;
+                        text-transform: uppercase;
+                        width: 40%;
+                    }
                 }
             }
         }

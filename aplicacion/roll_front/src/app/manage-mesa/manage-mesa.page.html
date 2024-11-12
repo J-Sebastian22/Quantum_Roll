@@ -27,9 +27,11 @@
       </div>
       <div class="personajes-container">
           <h2>Personajes</h2>
-          <ion-item *ngFor="let personaje of personajes">
-            <ion-label>Personaje ID: {{ personaje.id }}</ion-label>
-          </ion-item>
+          <div class="scroll">
+            <ion-item  (click)="goToModify_pj()" class="personaje-item"  *ngFor="let personaje of personajes">
+              <ion-label>ID: {{ personaje.id }}</ion-label>
+            </ion-item>
+          </div>
         <ion-fab-button color="dark" (click)="crearPersonajeBasico()" class="add-personaje">
           <ion-icon name="add"></ion-icon>
         </ion-fab-button>

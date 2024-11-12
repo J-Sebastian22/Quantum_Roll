@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { NavController } from '@ionic/angular';
+import { MesaService } from '../services/mesa.service';
 
 @Component({
   selector: 'app-modify-pj',
@@ -20,13 +21,14 @@ export class ModifyPjPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
+    private mesaService: MesaService,
   ) { }
 
   ngOnInit() {
   }
 
   goToManage_Mesa() {
-    this.navCtrl.navigateBack('/game-master/manage-mesa');
+    this.navCtrl.navigateBack('/game-master/manage-mesa/${mesaId}');
   }
 
   async cargarImagen() {
