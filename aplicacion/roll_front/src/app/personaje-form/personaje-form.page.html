@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Registrar Personaje</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/jugador"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="characterForm" (ngSubmit)="submitForm()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Información Personal</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input formControlName="nombre" type="text" placeholder="Nombre del personaje"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Edad</ion-label>
+          <ion-input formControlName="edad" type="number" placeholder="Edad"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Altura (cm)</ion-label>
+          <ion-input formControlName="altura" type="number" placeholder="Altura en centímetros"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Apodo</ion-label>
+          <ion-input formControlName="apodo" type="text" placeholder="Apodo del personaje"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Estadísticas Principales</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Bloqueo</ion-label>
+          <ion-input formControlName="bloqueo" type="number" placeholder="Puntos de bloqueo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Esquivar</ion-label>
+          <ion-input formControlName="esquivar" type="number" placeholder="Puntos de esquivar"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Ataque</ion-label>
+          <ion-input formControlName="ataque" type="number" placeholder="Puntos de ataque"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button (click)="goToJugador()" expand="full" type="submit" color="primary">Guardar Personaje</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ingresar ID de Personaje</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">ID del Personaje</ion-label>
+    <ion-input [(ngModel)]="characterId" type="text"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="checkCharacterId()">Verificar</ion-button>
+</ion-content>
