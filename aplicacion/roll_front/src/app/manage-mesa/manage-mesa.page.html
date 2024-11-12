@@ -31,7 +31,7 @@
           <h2>Personajes</h2>
           <div class="scroll">
             <ion-item  (click)="goToModify_pj()" class="personaje-item"  *ngFor="let personaje of personajes">
-              <ion-label>ID: {{ personaje.id }}</ion-label>
+              <ion-label>{{ personaje.nombre || 'ID: ' + personaje.id }}</ion-label>
             </ion-item>
           </div>
         </div>

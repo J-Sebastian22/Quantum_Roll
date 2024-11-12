@@ -40,9 +40,7 @@ const routes: Routes = [
     path: 'game-master/modify-pj',
     loadChildren: () => import('./modify-pj/modify-pj.module').then( m => m.ModifyPjPageModule)
   },
-<<<<<<< Updated upstream
 
-=======
   {
     path: 'jugador',
     loadChildren: () => import('./jugador/jugador.module').then( m => m.JugadorPageModule)
@@ -52,7 +50,6 @@ const routes: Routes = [
     loadChildren: () => import('./personaje-form/personaje-form.module').then( m => m.PersonajeFormPageModule)
   },
   
->>>>>>> Stashed changes
 ];
 
 @NgModule({

@@ -85,6 +85,7 @@ export class ManageMesaPage implements OnInit {
     this.mesaService.getPersonajes(this.mesaId).subscribe(
       (data) => {
         this.personajes = data;  // Guardar los personajes en la propiedad
+        console.log('datos:',this.personajes);
       },
       (error) => {
         console.error('Error al obtener los personajes:', error);

@@ -158,7 +158,7 @@ def listar_personajes_mesa(request, mesa_id):
         personajes = Personaje.objects.filter(mesa=mesa)
 
         # Serializar solo el ID de cada personaje
-        personajes_data = [{"id": personaje.id} for personaje in personajes]
+        personajes_data = [{"id": personaje.id, "nombre": personaje.nombre} for personaje in personajes]
 
         return Response(personajes_data, status=status.HTTP_200_OK)
 

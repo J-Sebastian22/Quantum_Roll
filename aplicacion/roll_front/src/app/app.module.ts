@@ -13,16 +13,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { Storage } from '@ionic/storage-angular';
 
 @NgModule({
-<<<<<<< Updated upstream
-  declarations: [AppComponent, LoginPage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule, HttpClientModule, IonicModule.forRoot({})],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-=======
   declarations: [AppComponent, LoginPage, CharacterIdModalComponent],
   imports: [BrowserModule, IonicModule.forRoot(),IonicStorageModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule, IonicModule.forRoot({})],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Storage],
->>>>>>> Stashed changes
   bootstrap: [AppComponent],
 })
 export class AppModule {}
