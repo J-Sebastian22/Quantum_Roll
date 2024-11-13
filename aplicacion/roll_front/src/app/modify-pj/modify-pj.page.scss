@@ -1,6 +1,6 @@
 ion-toolbar {
     --background: #000000da;
-    margin-top: -30px;
+    margin-top: -5px;
     margin-bottom: 20px;
 }
 
@@ -137,10 +137,12 @@ ion-range::part(bar-active) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: auto;
+    overflow-y: auto;
 }
 
 .inventory-item {
-    --background: #140b0b;
+    --background: #3e3e3e;
     width: 100px;
     height: auto;
     justify-content: center;
@@ -175,16 +177,32 @@ ion-modal {
     --border-radius: 16px;
     --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
-
-ion-modal::part(backdrop) {
+  
+  ion-modal::part(backdrop) {
     background: rgba(209, 213, 219);
     opacity: 1;
 }
-
-ion-modal ion-toolbar {
-    --background: rgb(14 116 144);
+  
+  ion-modal ion-toolbar {
+    --background: rgba(28, 28, 28, 0.87);
     --color: white;
+    margin-top: 5px;
+
+    ion-button{
+        --color: white;
+    }
 }
+
+.lista{
+    background: rgb(52, 52, 52);
+    margin-top: -15px;
+    height: auto;
+
+    ion-item{
+        border-bottom: 1px solid black;
+    }
+}
+
 
 ion-fab-button {
     position: absolute;
@@ -198,13 +216,6 @@ ion-range {
     width: 100%;
 }
 
-ion-button {
-    margin-top: 40px;
-    border-radius: 15px;
-    color: #f4d03f;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    transition: background-color 0.3s ease;
-}
 
 ion-list {
     backdrop-filter: blur(4px);
@@ -215,7 +226,7 @@ ion-list {
     border-radius: 20px;
     padding: 10px;
     overflow-y: auto;
-    height: 70%;
+    height: 90%;
 }
 
 ion-list-header {
@@ -276,6 +287,18 @@ ion-input {
         }
 
 
+        .title4 {
+            font-family: 'Cinzel Decorative', serif; /* Aplica la fuente al título */
+            font-size: 2em;
+            color: #ffc107; /* Cambia el color para hacerlo más llamativo */
+            margin-bottom: -50px;
+            margin-top: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade un efecto de sombra */
+            text-align: center;
+            
+        }
+
+
 
 .title-personajes {
     font-family: garamond;
@@ -329,6 +352,7 @@ ion-input {
     position: relative;
     height: 100%;
     align-content: flex-start;
+    margin-top: -40px;
 }
 
 .personaje-item {

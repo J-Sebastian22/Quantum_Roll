@@ -92,51 +92,29 @@
             <div class="personajes-container">
               <ion-list lines="none">
               <div class="inventory-container">
-                <ion-item class="inventory-item" id="open-modal">
+                <ion-item class="inventory-item" id="open-modal1">
                   <ion-img
-                  src='/assets/images/wooden_sword.png'></ion-img>
+                  src='/assets/icon/arm2.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item" id="open-modal">
-                  <ion-modal #modal trigger="open-modal">
-                    <ng-template>
-                      <ion-content>
-                        <ion-toolbar>
-                          <ion-title>Cascos</ion-title>
-                          <ion-buttons slot="end">
-                            <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
-                          </ion-buttons>
-                        </ion-toolbar>
-                  
-                        <ion-list>
-                          <ion-item>
-                            <ion-label position="stacked">Nombre del Ítem</ion-label>
-                            <ion-input placeholder="Ingresa el nombre del ítem" [(ngModel)]="nombreItem"></ion-input>
-                          </ion-item>
-                  
-                          <ion-item>
-                            <ion-label position="stacked">Imagen del Ítem</ion-label>
-                            <ion-img [src]="imagenItemUrl" alt="Imagen del ítem"></ion-img>
-                            <ion-button expand="block" (click)="cargarImagen()">Cargar Imagen</ion-button>
-                          </ion-item>
-                  
-                          <ion-item>
-                            <ion-label position="stacked">Estadística</ion-label>
-                            <ion-input type="number" placeholder="Estadística que da" [(ngModel)]="estadisticaItem"></ion-input>
-                          </ion-item>
-                        </ion-list>
-                      </ion-content>
-                    </ng-template>
-                  </ion-modal>
+                <ion-item class="inventory-item" id="open-modal2">
                   <ion-img
-                  [src]='imagenItemUrl'></ion-img>
+                  src='/assets/icon/arma1.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item" id="open-modal">
+                <ion-item class="inventory-item" id="open-modal3">
                   <ion-img
-                  src='/assets/images/wooden_sword.png'></ion-img>
+                  src='/assets/icon/poti.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item" id="open-modal">
+                <ion-item class="inventory-item" id="open-modal4">
                   <ion-img
-                  src='/assets/images/wooden_sword.png'></ion-img>
+                  src='/assets/icon/comi1.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item" id="open-modal5">
+                  <ion-img
+                  src='/assets/icon/herra.png'></ion-img>
+                </ion-item>
+                <ion-item class="inventory-item" id="open-modal6">
+                  <ion-img
+                  src='/assets/icon/Stick.png'></ion-img>
                 </ion-item>
               </div>
               <ion-fab-button color="dark" >
@@ -145,47 +123,362 @@
               </ion-list> 
             </div>
           </div>
+
+          <ion-modal #modal trigger="open-modal1">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Armadura</ion-title>
+                  <ion-buttons class="boton" slot="end">
+                    <ion-button (click)="dismiss()">Cerrar</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <ion-list class="lista">
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arm3.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Guantes Oxidados</h2>
+                      <p>Armadura = +1 (Corrosivo Al Toque)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arm4.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Capucha De Asesino</h2>
+                      <p>Destreza = +5 (Sigilo)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arm5.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Collar De Sometimiento</h2>
+                      <p>Carisma = +10 (Encanto)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arm1.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>E.V.A</h2>
+                      <p>Armadura/ Constitucion = +10 (Mitigacion Daño 10%)</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+          <ion-modal #modal trigger="open-modal2">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Armas</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button (click)="dismiss()">Cerrar</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <ion-list class="lista">
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arma2.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Kreema'ahm la Ahmahm</h2>
+                      <p>Destreza = +5 (Espinas)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arma3.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Hacha De Combate</h2>
+                      <p>Fuerza = +5 (Aturdimiento)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arma4.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Arco De Las Mareas</h2>
+                      <p>Punteria = +5 (XP X3)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/arma5.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Stormbreaker</h2>
+                      <p>Velocida/Fuerza = +5 (Cable Muerto)</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+          <ion-modal #modal trigger="open-modal3">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Pociones</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button (click)="dismiss()">Cerrar</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <ion-list class="lista">
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/potif.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Pocion De Fuerza</h2>
+                      <p>Fuerza = +20</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/potiven.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Pocion De Veneno Arrojadiza</h2>
+                      <p>Salud = -1/s (10 sg)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/potiman.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Pocion De Mana</h2>
+                      <p>Mana = +5</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/potivid.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Pocion De Vida</h2>
+                      <p>Salud = +10</p>
+                    </ion-label>
+                  </ion-item>
+
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+          <ion-modal #modal trigger="open-modal4">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Comida</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button  (click)="dismiss()">Cerrar</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <ion-list class="lista" >
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/comi.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Olla Comunitaria (Sancocho)</h2>
+                      <p>Regeneracion = +2/s (10 sg / Verborrea * 10)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/comi2.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Huevo De Angel</h2>
+                      <p>Sabiduria = +50 (Resurreccion Al Comer)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/comi3.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Muslo De Güarra</h2>
+                      <p>Salud = +1| Mana = -1 (Intoxicacion)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/comi4.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Sucunleta Chuleta</h2>
+                      <p>Vida Maxima = +10 (Lentitud / Obesidad)</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+          <ion-modal #modal trigger="open-modal5">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Herramientas</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button  (click)="dismiss()">Cerrar</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <ion-list class="lista" >
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/herra2.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Indy</h2>
+                      <p> Destreza|Resistencia = +5 (Sangrado / Dominio)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/herra3.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Pala Acechadora</h2>
+                      <p> Todas Las Stast = +5 (Invulnerabilidad Al Usos)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/herra4.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Hacha Hogareña</h2>
+                      <p> Resistencia = +2 (Velocidad De Tala * 5)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/herra5.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Mjölnir</h2>
+                      <p> Constitucion = +2 (Reparacion / Mejora)</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+          <ion-modal #modal trigger="open-modal6">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Objetos</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button  (click)="dismiss()">Cerrar</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <ion-list class="lista" >
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/obje.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Lingote Espectral</h2>
+                      <p>Nivel De Arma = +10 (omnivampirismo)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/obje4.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Candado Infinito</h2>
+                      <p>F.Voluntad = +15 (Cerradura ∞)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/obje1.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Tripalozqui</h2>
+                      <p>Sabiduria/Estamina = +5 (Espiritu/Invocacion)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/obje2.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Grimory Weiss</h2>
+                      <p>Sabiduria/Inteligencia = +10 (Ren. Mana/Mana Maximo)</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-avatar slot="start">
+                      <ion-img src="/assets/icon/obje3.png"></ion-img>
+                    </ion-avatar>
+                    <ion-label>
+                      <h2>Ojo Del Dragon</h2>
+                      <p>Fuerza/Intuicion = +20 (Infeccion/Esencia)</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
       </div>
     </ion-tab>
 
     <ion-tab tab="pjkn">
+      <hr>
       <div class="game-master-container">
-        <h1 class="title">Modificar Personaje</h1>
-        <hr>
+        <ion-title class="title4">Personajes <br>Conocidos</ion-title>
           <div class="todo">
             <div class="personajes-container">
-              <h2 class="title-personajes">Sigma</h2>
               <ion-list lines="none">
-                <ion-list-header>
-                  Personajes conocidos
-                </ion-list-header>
               <div class="inventory-container">
-                <ion-item class="inventory-item">
+                <ion-item class="inventory-item" id="open-modal1">
                   <ion-img
-                  src='/assets/images/npc1.png'></ion-img>
+                  src='/assets/icon/prosti2.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item">
+                <ion-item class="inventory-item" id="open-modal2">
                   <ion-img
-                  src='/assets/images/npc1.png'></ion-img>
+                  src='/assets/icon/herrero.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item">
+                <ion-item class="inventory-item" id="open-modal3">
                   <ion-img
-                  src='/assets/images/npc1.png'></ion-img>
+                  src='/assets/icon/caballera.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item">
+                <ion-item class="inventory-item" id="open-modal4">
                   <ion-img
-                  src='/assets/images/npc1.png'></ion-img>
+                  src='/assets/icon/prosti.png'></ion-img>
                 </ion-item>
-                <ion-item class="inventory-item">
+                <ion-item class="inventory-item" id="open-modal5">
                   <ion-img
-                  src='/assets/images/npc1.png'></ion-img>
+                  src='/assets/icon/ocultista.png'></ion-img>
                 </ion-item>
-
-                <ion-fab-button color="dark" >
-                  <ion-icon name="add"></ion-icon>
-                </ion-fab-button>
-
+                <ion-item class="inventory-item" id="open-modal6">
+                  <ion-img
+                  src='/assets/icon/alcalde.png'></ion-img>
+                </ion-item>
               </div>
+              <ion-fab-button color="dark" >
+                <ion-icon name="add"></ion-icon>
+              </ion-fab-button>
               </ion-list> 
             </div>
           </div>
