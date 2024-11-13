@@ -1,6 +1,10 @@
 .game-master-page {
     --background: url('/assets/images/3.jpg') no-repeat center center/cover;
 
+    ion-modal {
+        --height: 10vh;
+        --background: #000000;
+    }
     .game-master-container {
         display: flex;
         flex-direction: column;
