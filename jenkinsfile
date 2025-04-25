@@ -19,14 +19,6 @@ pipeline {
             }
         }
 
-        stage('Apagar contenedores previos') {
-            steps {
-                dir("${COMPOSE_PROJECT_DIR}") {
-                    sh 'docker-compose down || true'
-                }
-            }
-        }
-
         stage('Build y Deploy') {
             steps {
                 dir("${COMPOSE_PROJECT_DIR}") {
