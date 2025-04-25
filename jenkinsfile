@@ -15,7 +15,7 @@ pipeline {
 
         stage('Clonar código') {
             steps {
-                git 'https://github.com/J-Sebastian22/Quantum_Roll.git'
+                git branch: 'main', url: 'https://github.com/J-Sebastian22/Quantum_Roll.git'
             }
         }
 
