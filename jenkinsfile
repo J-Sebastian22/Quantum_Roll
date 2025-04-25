@@ -35,6 +35,14 @@ pipeline {
             }
         }
 
+        stage('Ejecutar Migraciones') {
+            steps {
+                dir("${COMPOSE_PROJECT_DIR}") {
+                    sh 'docker exec -T quantum_roll-django-api-1 python /app/manage.py migrate'
+                }
+            }
+        }
+
         stage('Verificar Despliegue') {
             steps {
                 script {

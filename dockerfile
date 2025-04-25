@@ -1,10 +1,12 @@
-FROM python:3.9
+FROM python:3.10
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Copiar todos los archivos de la raíz del proyecto y la carpeta 'API_Quantum_Roll' al contenedor
+COPY . /app
 
-COPY . .
+# Instalar las dependencias
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Ejecutar el servidor de Django
+CMD ["python", "/app/aplicacion/API_Quantum_Roll/manage.py", "runserver", "0.0.0.0:8000"]
