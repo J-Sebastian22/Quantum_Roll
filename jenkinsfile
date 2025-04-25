@@ -1,0 +1,43 @@
+pipeline {
+    agent {label 'agent4'}
+
+    environment {
+        COMPOSE_PROJECT_NAME = "djangoapi"
+    }
+
+    stages {
+        stage('Clonar proyecto') {
+            steps {
+                git 'https://github.com/tuusuario/tu-api-django.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'docker-compose build'
+            }
+        }
+
+        stage('Levantar contenedor') {
+            steps {
+                sh 'docker-compose up -d'
+                sh 'sleep 10' // espera a que levante el contenedor
+            }
+        }
+
+        stage('Verificar API') {
+            steps {
+                sh '''
+                curl -f http://localhost:8000/ || (echo "API no responde correctamente" && exit 1)
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Apagando contenedores...'
+            sh 'docker-compose down'
+        }
+    }
+}
