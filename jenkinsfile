@@ -1,43 +1,47 @@
 pipeline {
-    agent {label 'agent4'}
+    agent { label 'agent4' }
 
     environment {
-        COMPOSE_PROJECT_NAME = "djangoapi"
+        COMPOSE_PROJECT_DIR = 'aplicacion/API_Quantum_Roll'
     }
 
     stages {
-        stage('Clonar proyecto') {
+        stage('Verificar Docker') {
             steps {
-                git 'https://github.com/tuusuario/tu-api-django.git'
+                sh 'docker -v'
+                sh 'docker-compose -v'
             }
         }
 
-        stage('Build') {
+        stage('Clonar código') {
             steps {
-                sh 'docker-compose build'
+                git 'https://github.com/J-Sebastian22/Quantum_Roll.git'
             }
         }
 
-        stage('Levantar contenedor') {
+        stage('Apagar contenedores previos') {
             steps {
-                sh 'docker-compose up -d'
-                sh 'sleep 10' // espera a que levante el contenedor
+                dir("${COMPOSE_PROJECT_DIR}") {
+                    sh 'docker-compose down || true'
+                }
             }
         }
 
-        stage('Verificar API') {
+        stage('Build y Deploy') {
             steps {
-                sh '''
-                curl -f http://localhost:8000/ || (echo "API no responde correctamente" && exit 1)
-                '''
+                dir("${COMPOSE_PROJECT_DIR}") {
+                    sh 'docker-compose up --build -d'
+                }
             }
         }
-    }
 
-    post {
-        always {
-            echo 'Apagando contenedores...'
-            sh 'docker-compose down'
+        stage('Verificar Despliegue') {
+            steps {
+                script {
+                    sleep 10 // Esperar que el servidor levante
+                    sh 'curl --fail http://localhost:8000/mesa/ || echo "La API no respondió"'
+                }
+            }
         }
     }
 }
