@@ -9,4 +9,5 @@ COPY . /app
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Ejecutar el servidor de Django
-CMD ["python", "/app/aplicacion/API_Quantum_Roll/manage.py", "runserver", "0.0.0.0:8000"]
+WORKDIR /app/Quantum_Roll/aplicacion/API_Quantum_Roll
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
